@@ -4,6 +4,7 @@ import Display from "./components/Display";
 import Heading from "./components/Heading";
 import Subheading from "./components/Subheading";
 import Style from "./components/Style";
+import Fetch from "./components/Fetch";
 
 function App() {
 	const parents = {
@@ -26,6 +27,7 @@ function App() {
 			/>
 			<Form />
 			<Style style={{ padding: `2rem`, color: `blue` }} />
+			<Fetch />
 		</div>
 	);
 }
