@@ -6,6 +6,8 @@ import Subheading from "./components/Subheading";
 import Style from "./components/Style";
 import Fetch from "./components/Fetch";
 import Focus from "./components/Focus";
+import { ThemeProvider } from "./components/ThemeContext";
+import ThemeChanger from "./components/ThemeChange";
 
 function App() {
 	const parents = {
@@ -15,21 +17,24 @@ function App() {
 	const hobbies = ["playing guitar", "collecting coins"];
 	return (
 		<div className="App">
-			<Heading>
-				<Subheading />
-			</Heading>
-			<Display
-				name="John"
-				age={20}
-				alive={true}
-				parents={parents}
-				hobbies={hobbies}
-				profession="Developer"
-			/>
-			<Form />
-			<Style style={{ padding: `2rem`, color: `blue` }} />
-			<Fetch />
-			<Focus />
+			<ThemeProvider>
+				<Heading>
+					<Subheading />
+				</Heading>
+				<Display
+					name="John"
+					age={20}
+					alive={true}
+					parents={parents}
+					hobbies={hobbies}
+					profession="Developer"
+				/>
+				<Form />
+				<Style style={{ padding: `2rem`, color: `blue` }} />
+				<Fetch />
+				<Focus />
+				<ThemeChanger />
+			</ThemeProvider>
 		</div>
 	);
 }
